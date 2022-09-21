@@ -1,0 +1,4 @@
+export const
+    VIDEO_PLAY = 'VIDEO_PLAY',
+    VIDEO_PAUSE = 'VIDEO_PAUSE',
+    VIDEO_REPLAY = 'VIDEO_REPLAY'
