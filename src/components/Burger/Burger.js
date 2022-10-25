@@ -4,10 +4,10 @@
  * @date 19.08.2022
  */
 
-import React, { useState } from 'react'
+import React from 'react'
 import { useWindowSize } from '../../hooks'
 import {useToggle} from '../../hooks'
-import { isWindows } from 'react-device-detect'
+import { isMobile } from 'react-device-detect'
 
 const Burger = ({ color }) => {
     /* variables area */
@@ -28,12 +28,12 @@ const Burger = ({ color }) => {
     ...if it was clicked and not a burger now:
        ...just make the two lines rotate and then move up or down in order to become a cross
      */
-    const firstLineStyles = (isBurger ? isHover && isWindows && screenWidth > 1024 && 'translate-x-2'
+    const firstLineStyles = (isBurger ? isHover && !isMobile && screenWidth > 1024 && 'translate-x-2'
                                         :
-                                        'rotate-[225deg] translate-y-[7px]')
-    const thirdLineStyles = (isBurger ? isHover && isWindows && screenWidth > 1024 && '-translate-x-2'
+                                        'rotate-[225deg] translate-y-[7.25px]')
+    const thirdLineStyles = (isBurger ? isHover && !isMobile && screenWidth > 1024 && '-translate-x-2'
                                         :
-                                        '-rotate-[225deg] -translate-y-[7px]')
+                                        '-rotate-[225deg] -translate-y-[7.25px]')
     // the style of middle line: just disappear when button is not a burger and showing a cross
     const midLineStyle = (!isBurger && 'translate-x-2 opacity-0')
     
@@ -43,11 +43,11 @@ const Burger = ({ color }) => {
              onMouseLeave={toggleHover}     // if mouse leave, set hover false
              onClick={toggleBurger}         // if click the button, set reverse boolean status
         >
-            <span className={`${color} h-[1px] w-7 my-1.5 duration-300 ease-in-out ${firstLineStyles}`}>
+            <span className={`${color} h-[1.25px] w-8 my-1.5 duration-300 ease-in-out ${firstLineStyles}`}>
             </span>
-            <span className={`${color} h-[1px] w-7 duration-300 ease-in-out ${midLineStyle}`}>
+            <span className={`${color} h-[1.25px] w-8 duration-300 ease-in-out ${midLineStyle}`}>
             </span>
-            <span className={`${color} h-[1px] w-7 my-1.5 duration-300 ease-in-out ${thirdLineStyles}`}>
+            <span className={`${color} h-[1.25px] w-8 my-1.5 duration-300 ease-in-out ${thirdLineStyles}`}>
             </span>
         </div>
     )

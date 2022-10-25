@@ -41,8 +41,6 @@ import { VIDEO_PAUSE, VIDEO_PLAY, VIDEO_REPLAY } from './constants'
  */
 
 const Video = ({autoplay, image, replay, video}) => {
-    
-    
     // getting the control of video, HTMLDivElement(null)
     const videoRef = useRef(null)
     
@@ -57,10 +55,9 @@ const Video = ({autoplay, image, replay, video}) => {
     const [, dispatcher] = useReducer(reducer, initState)
     
     // using different functions to dispatch several operations for multiple scenarios
-     const videoPlayHandler = async () => await dispatcher({ type:VIDEO_PLAY, videoPlayer: videoRef.current })
+    const videoPlayHandler = async () => await dispatcher({ type:VIDEO_PLAY, videoPlayer: videoRef.current })
     const videoPauseHandler = async () => await dispatcher({ type:VIDEO_PAUSE, videoPlayer: videoRef.current })
     const videoReplayHandler = async () => await dispatcher({ type:VIDEO_REPLAY, videoPlayer: videoRef.current })
-    
     
     return (
         <video ref={videoRef}

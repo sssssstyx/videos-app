@@ -15,7 +15,7 @@ export default function Header (props) {
     const {directionY} = useScrollDirection()     // get vertical scroll direction
     
     /***** debounce optimisation: only the last action is performed even if the mouse keeps scrolling *****/
-    const [navScroll, setNavScroll] = useDebounce("", 1000);
+    const [navScroll, setNavScroll] = useDebounce("", 300);
     
     // const navScroll = directionY === "down" && "-translate-y-16"     // navigation scroll style without debounce
     // if scroll down, header moves up and disappears with an animation delay, conversely it slides down
@@ -28,7 +28,7 @@ export default function Header (props) {
     return (
         <header
             className={
-                `fixed top-0 w-full min-w-[280px] md:h-nav z-50 duration-500 ease-in-out ${navScroll} ${transOpacity}`
+                `fixed top-0 w-full min-w-[280px] md:h-nav z-50 duration-300 ease-in-out ${navScroll} ${transOpacity}`
             }
         >
             {props.children}
