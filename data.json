@@ -1,0 +1,33 @@
+{
+    "home":{
+        "navigation": {
+            "navigationMenu": [
+                {
+                    "id": 1,
+                    "name": "Racing",
+                    "link": "racing"
+                },
+                {
+                    "id": 2,
+                    "name": "Bespoke",
+                    "link": "bespoke"
+                },
+                {
+                    "id": 3,
+                    "name": "Careers",
+                    "link": "careers"
+                },
+                {
+                    "id": 4,
+                    "name": "Story",
+                    "link": "story"
+                }
+            ]
+        },
+        "content": {
+            "description": "Defy the limits",
+            "title": "McLarren GT",
+            "button": "Discover"
+        }
+    }
+}
